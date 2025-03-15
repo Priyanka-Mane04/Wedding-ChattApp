@@ -1,0 +1,70 @@
+
+      {/* Chat App Modal */}
+      {isChatOpen && (
+        <div className="chat-modal">
+          <div className="chat-content">
+            <button className="close-btn" onClick={() => setIsChatOpen(false)}>✖</button>
+            <iframe 
+              src="https://chatt-app-oq7w.onrender.com/" 
+              title="Chat Support"
+              className="chat-frame"
+            ></iframe>
+          </div>
+        </div>
+      )}
+          {/* Chat Support Button */}
+          <button className="btn btn-primary ml-3" onClick={() => setIsChatOpen(true)}>
+            Chat Support!
+          </button>
+
+      {/* Smooth Scrolling & Chat Modal CSS */}
+      <style>
+        {`
+          html {
+            scroll-behavior: smooth;
+          }
+
+          .chat-modal {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            display: flex;
+            justify-content: right;
+            align-items: center;
+            z-index: 1000;
+          }
+
+          .chat-content {
+            width: 400px;
+            height: 500px;
+            background: white;
+            border-radius: 10px;
+            position: relative;
+            display: flex;
+            flex-direction: column;
+          }
+
+          .chat-frame {
+            width: 100%;
+            height: 100%;
+            border: none;
+          }
+
+          .close-btn {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background: red;
+            color: white;
+            border: none;
+            border-radius: 50%;
+            width: 30px;
+            height: 30px;
+            cursor: pointer;
+            font-size: 16px;
+          }
+        // `}
+      </style>
